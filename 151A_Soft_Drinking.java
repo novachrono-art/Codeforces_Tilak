@@ -16,15 +16,9 @@ public class Main {
         int p= sc.nextInt();
         int nl= sc.nextInt();
         int np = sc.nextInt();
-        int tdrink = k*l;
+        int tdrink = (k*l)/nl;
         int tslice = c*d;
-        int ct=0;
-        while(tdrink>=(n*nl) && tslice>=n && p>=(n*np)){
-            ct++;
-            tdrink-= n*nl;
-            tslice -= n;
-            p-= n*np;
-        }
-        System.out.println(ct);
+        int tsalt = p/np;
+        System.out.println(Math.min(tdrink,Math.min(tslice,tsalt))/n);
     }
 }
